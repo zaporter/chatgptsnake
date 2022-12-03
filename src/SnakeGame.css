@@ -1,0 +1,25 @@
+body {
+  background-color: lightgreen;
+}
+
+.snake-game {
+  text-align: center;
+}
+
+.snake-game h1 {
+  margin: 0;
+}
+
+.snake-game p {
+  margin: 0;
+}
+
+.start-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: green;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}

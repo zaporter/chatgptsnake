@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Snake from './Snake';
+import './SnakeGame.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+class SnakeGame extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      started: false
+    };
+  }
+
+  startGame = () => {
+    this.setState({
+      started: true
+    });
+  }
+
+  resetGame = () => {
+    this.setState({
+      started: false
+    });
+  }
+
+  render() {
+    return (
+      <div className="snake-game">
+        <h1>Snake</h1>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          by <a href="https://github.com/chatGPT">chatGPT</a>
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+        {this.state.started ? (
+          <Snake onGameOver={this.resetGame} />
+        ) : (
+          <button className="start-button" onClick={this.startGame}>Start game</button>
+        )}
+        <p>
+          Every line of code in this app was written by <a href="https://github.com/chatGPT">chatGPT</a>.
+          If you want to see how I did it, visit <a href="https://www.latticeanimal.com/snake-howto.html">https://www.latticeanimal.com/snake-howto.html</a>.
+        </p>
+      </div>
+    );
+  }
 }
 
-export default App;
+export default SnakeGame;

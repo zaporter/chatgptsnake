@@ -1,0 +1,24 @@
+.snake-container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  margin: auto;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: lightgray;
+}
+
+.cell {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+}
+
+.snake {
+  background-color: red;
+}
+
+.food {
+  background-color: green;
+}
